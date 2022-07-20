@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Zoo-drag-and-drop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+    <canvas id="Logo" width="550px" height="400px"></canvas>
+    <div id="estructura">
+        <div id="info">
+            <img src="img/Logo.png" width="90%">
+            <p id="jugador"></p>
+            <p id="time"> <img src="img/Reloj.png" width="40px"> 00:00</p>
+            <p id="vidas"></p>
+        </div>
+        <div id="contenedor">
+            <div id="habitat"></div>
+            <div id="animales"></div>
+        </div>
+    </div>
+    <div class="botones">
+        <button id="Volver" class="boton" style="display: none;"></button>
+        <button id="Jugar" class="boton">Jugar</button>
+    </div>
     
+    <button id="Credito" class="cre">Credito</button>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
