@@ -21,7 +21,7 @@ var time;
 
 var lienzo = document.getElementById("Logo").getContext('2d');
 var logo = new Image();
-logo.src="../img/Logo.png";
+logo.src="img/Logo.png";
 logo.addEventListener("load",function(){lienzo.drawImage(logo,0,0,530,400);})
 
 document.getElementById("Volver").addEventListener("click",Escoger);
@@ -71,7 +71,7 @@ function CrearTabla(aux){
     let ids=[];
     for (let i = 0; i < aux.length; i++) {
         info+="<div class='hab'>";
-        info+="<img id='"+aux[i].numero+"_h' src='../img/hab/"+aux[i].nombre+"_h.png' width=100% height=100% />";
+        info+="<img id='"+aux[i].numero+"_h' src='img/hab/"+aux[i].nombre+"_h.png' width=100% height=100% />";
         info+="<p id='"+aux[i].numero+"_t'></p></div>";
         ids.push(aux[i].numero+"_h");
     }
@@ -96,7 +96,7 @@ function CrearTabla(aux){
     }
     for (let i = 0; i < xua.length; i++) {
         info+="<div class='ani'>";
-        info+="<img id='"+xua[i].numero+"' src='../img/ani/"+xua[i].nombre+".png' width=100% height=100% />";
+        info+="<img id='"+xua[i].numero+"' src='img/ani/"+xua[i].nombre+".png' width=100% height=100% />";
         info+="</div>";
         ids.push(xua[i].numero);
     }
@@ -122,9 +122,9 @@ function soltado(e){
     console.log(e.path[0].id);
     var id = e.dataTransfer.getData('Text');
     if (e.path[0].id==id+"_h") {
-        let sonido = new Audio("../audio/"+id+".mp3");
+        let sonido = new Audio("audio/"+id+".mp3");
         document.getElementById(id).style.display = "none";
-        document.getElementById(e.path[0].id).src = "../img/habani/"+Lista[id-1].nombre+"_f.png";
+        document.getElementById(e.path[0].id).src = "img/habani/"+Lista[id-1].nombre+"_f.png";
         document.getElementById(id+"_t").innerHTML = Lista[id-1].nombre;
         sonido.play();
         sonido.loop = false;
@@ -135,7 +135,7 @@ function soltado(e){
             document.getElementById("animales").innerHTML="<button id='V' class='boton' onclick='Fin()'>Terminar</button>";
         }
     }else{
-        let error = new Audio("../audio/error.mp3");
+        let error = new Audio("audio/error.mp3");
         error.play();
         error.loop = false;
         vidas--;
@@ -148,25 +148,25 @@ function soltado(e){
 function ActulizarVidas(){
     let info="Vidas:";
     for (let i = 0; i < vidas; i++) {
-        info+="<img src='../img/Vida.png' width='40px'/>";
+        info+="<img src='img/Vida.png' width='40px'/>";
     }
     document.getElementById("vidas").innerHTML=info;
 }
 function GameOver(){
     DetenerTiempo();
-    document.getElementById("habitat").innerHTML =  "<img src='../img/Logo.png' width='50%' />";
+    document.getElementById("habitat").innerHTML =  "<img src='img/Logo.png' width='50%' />";
     document.getElementById("animales").innerHTML =  "Perdiste "+JSON.parse(localStorage.getItem("Nombre"))+"<br>animo intentalo de nuevo";
     document.getElementById("Volver").style.display = "inline";
     document.getElementById("Volver").innerHTML = "Volver a jugar";
     document.getElementById("Jugar").style.display = "inline";
     document.getElementById("Jugar").innerHTML = "Otro Jugador";
-    document.getElementById("vidas").innerHTML="Vidas: <img src='../img/Craneo.png' width='30px'/>";
+    document.getElementById("vidas").innerHTML="Vidas: <img src='img/Craneo.png' width='30px'/>";
     cont=0;
 }
 function Fin(){
     DetenerTiempo();
-    document.getElementById("contenedor").style.backgroundImage = "url('../img/Artificiales.gif')";
-    document.getElementById("habitat").innerHTML =  "<img src='../img/Logo.png' width='50%' />";
+    document.getElementById("contenedor").style.backgroundImage = "url('img/Artificiales.gif')";
+    document.getElementById("habitat").innerHTML =  "<img src='img/Logo.png' width='50%' />";
     document.getElementById("animales").innerHTML =  "Felicidades "+JSON.parse(localStorage.getItem("Nombre"))+" lo has completado";
     document.getElementById("Volver").style.display = "inline";
     document.getElementById("Volver").innerHTML = "Volver a jugar";
@@ -180,9 +180,9 @@ function IniciarTiempo(){
             if (segundos==60) {
                 segundos=0;
                 minutos++;
-                document.getElementById("time").innerHTML="<img src='../img/Reloj.png' width='40px'> "+("0"+minutos).slice(-2)+":"+("0"+segundos).slice(-2);
+                document.getElementById("time").innerHTML="<img src='img/Reloj.png' width='40px'> "+("0"+minutos).slice(-2)+":"+("0"+segundos).slice(-2);
             }
-            document.getElementById("time").innerHTML="<img src='../img/Reloj.png' width='40px'> "+("0"+minutos).slice(-2)+":"+("0"+segundos).slice(-2);
+            document.getElementById("time").innerHTML="<img src='img/Reloj.png' width='40px'> "+("0"+minutos).slice(-2)+":"+("0"+segundos).slice(-2);
             segundos++;
         }
     ,1000);      
@@ -203,7 +203,7 @@ document.getElementById("Credito").addEventListener("click",function(){
     mensaje +="Ciudad: Rincon de Romos. <br><br>";
     mensaje +="Fecha: 12/03/2022. <br>";
       Swal.fire({
-        imageUrl: '../img/Logo_UAA.png',
+        imageUrl: 'img/Logo_UAA.png',
         imageHeight: 150,
         html:mensaje,
       });
