@@ -71,7 +71,7 @@ function CrearTabla(aux){
     let ids=[];
     for (let i = 0; i < aux.length; i++) {
         info+="<div class='hab'>";
-        info+="<img id='"+aux[i].numero+"_h' src='img/hab/"+aux[i].nombre+"_h.png' width=100% height=100% />";
+        info+="<img id='"+aux[i].numero+"_h' src='../img/hab/"+aux[i].nombre+"_h.png' width=100% height=100% />";
         info+="<p id='"+aux[i].numero+"_t'></p></div>";
         ids.push(aux[i].numero+"_h");
     }
@@ -96,7 +96,7 @@ function CrearTabla(aux){
     }
     for (let i = 0; i < xua.length; i++) {
         info+="<div class='ani'>";
-        info+="<img id='"+xua[i].numero+"' src='img/ani/"+xua[i].nombre+".png' width=100% height=100% />";
+        info+="<img id='"+xua[i].numero+"' src='../img/ani/"+xua[i].nombre+".png' width=100% height=100% />";
         info+="</div>";
         ids.push(xua[i].numero);
     }
@@ -180,9 +180,9 @@ function IniciarTiempo(){
             if (segundos==60) {
                 segundos=0;
                 minutos++;
-                document.getElementById("time").innerHTML="<img src='img/Reloj.png' width='40px'> "+("0"+minutos).slice(-2)+":"+("0"+segundos).slice(-2);
+                document.getElementById("time").innerHTML="<img src='../img/Reloj.png' width='40px'> "+("0"+minutos).slice(-2)+":"+("0"+segundos).slice(-2);
             }
-            document.getElementById("time").innerHTML="<img src='img/Reloj.png' width='40px'> "+("0"+minutos).slice(-2)+":"+("0"+segundos).slice(-2);
+            document.getElementById("time").innerHTML="<img src='../img/Reloj.png' width='40px'> "+("0"+minutos).slice(-2)+":"+("0"+segundos).slice(-2);
             segundos++;
         }
     ,1000);      
